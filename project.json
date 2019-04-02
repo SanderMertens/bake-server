@@ -1,0 +1,14 @@
+{
+    "id": "bake.server",
+    "type": "application",
+    "value": {
+        "author": "Sander Mertens",
+        "description": "A REST API that provides access to the bake environment",
+        "use": [
+            "flecs",
+            "flecs.components.http",
+            "flecs.systems.civetweb",
+            "bake.util"
+        ]
+    }
+}
