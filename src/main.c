@@ -149,7 +149,6 @@ error:
     return false;
 }
 
-
 int main(int argc, char *argv[]) {
     ecs_world_t *world = ecs_init_w_args(argc, argv);
 
@@ -161,14 +160,14 @@ int main(int argc, char *argv[]) {
     ecs_entity_t server = ecs_set(world, 0, EcsHttpServer, {.port = 21115});
 
     /* Create endpoint entities */
-    ecs_entity_t e_projects = ecs_new_child(world, server, NULL, 0);
+    ecs_entity_t e_projects = ecs_new_child(world, server, 0);
     ecs_set(world, e_projects, EcsHttpEndpoint, {
         .url = "projects",
         .action = EndpointProjects,
         .synchronous = false 
     });
 
-    ecs_entity_t e_info = ecs_new_child(world, server, NULL, 0);
+    ecs_entity_t e_info = ecs_new_child(world, server, 0);
     ecs_set(world, e_info, EcsHttpEndpoint, {
         .url = "info",
         .action = EndpointInfo,
